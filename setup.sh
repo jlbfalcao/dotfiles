@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp .vimrc ~
+ln -s ~/dotfiles/.vimrc ~
 
 cd ~
 if [ ! -d ~/.vim/bundle ]; then
