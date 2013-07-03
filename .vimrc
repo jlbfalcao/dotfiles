@@ -1,4 +1,7 @@
 
+" references:
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 syntax on
@@ -7,6 +10,7 @@ set backupdir=~/tmp
 set swapfile
 set dir=~/tmp
 
+set hidden
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -69,35 +73,16 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll|\.scssc$',
   \ }
 
-"tips:
-" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-"
 
-"nmap <Leader>\i gg=G<CR>"
-
-" indexar mais arquivos
 let g:CommandTMaxFiles=20000
-set guifont=Inconsolata:h18
-" set guifont=Droid\ Sans\ Mono:h14
-" permitir chavear entre buffers não salvos
-set hidden
 
-"colorscheme moria
-"let g:colors_name="desert"
-" set t_Co=256
-
-"nmap <leader>c :colorscheme moria<cr>
-
-" colorscheme moria
-colors wombat
-" colorscheme vividchalk
-
+set t_Co=256
 
 "edit vimrc
 nnoremap <leader>ev :e ~/.vimrc<cr>
 nnoremap <leader>sv :source ~/.vimrc<cr>
 
-" append coding header
+" append ruby encoding header
 nnoremap <leader>ac <esc>ggO# encoding: utf-8
 
 " delete at view mode, put in blackhole register
@@ -142,7 +127,6 @@ let g:syntastic_auto_loc_list=1
 
 " let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-1.9.3-p194-perf/bin/ruby'
 
-
 " from: https://www.destroyallsoftware.com/file-navigation-in-vim.html
 " map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 " map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
@@ -185,6 +169,8 @@ let g:ctrlp_custom_ignore = {
 set tags+=gems.tags
 
 if has("gui_running")
+  set guifont=Inconsolata:h18
+
   " GRB: set font"
   ":set nomacatsui anti enc=utf-8 gfn=Monaco:h12
 
