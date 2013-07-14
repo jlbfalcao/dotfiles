@@ -1,6 +1,14 @@
 #!/bin/sh
 
-ln -s ~/dotfiles/.vimrc ~
+for i in .bash_profile .bashrc .gitconfig .vimrc; do
+  cp -fv "$HOME/dotfiles/${i}" "$HOME/${i}"
+  # if [ -f "${HOME}/${i}" ]; then
+  #   # echo "~/${i} already exists"
+  #   ls -l ~/${i}
+  # else
+  #   echo "dotfiles/${i} -> ~/${i}"
+  # fi
+done
 
 cd ~
 if [ ! -d ~/.vim/bundle ]; then
@@ -8,7 +16,5 @@ if [ ! -d ~/.vim/bundle ]; then
 fi
 
 mkdir -p ~/tmp
-
-
 
 
