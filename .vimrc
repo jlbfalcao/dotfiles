@@ -63,6 +63,7 @@ Bundle 'rosenfeld/conque-term.git'
 Bundle 'skwp/vim-ruby-conque.git'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'JavaScript-Indent'
+Bundle 'go.vim'
 
 filetype plugin indent on     " required!
 
